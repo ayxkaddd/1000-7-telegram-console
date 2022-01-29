@@ -10,11 +10,10 @@ while true_or_false:
     inp = input('> ')
     if inp == '1':
         print('Введите юзернейм пользователя')
-        id_ = input('> ')
+        chat_id = input('> ')
         try:
             print('ебашим')
             i = 1000
-            chat_id = id_
             with app:
                 while i > 1:
                     i -= 7
