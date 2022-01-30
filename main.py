@@ -1,18 +1,21 @@
 from pyrogram import Client
 from time import sleep
+from colorama import init, Fore
+
+init(autoreset=True)
 
 app = Client('my_account')
 
 true_or_false = True
 
 while true_or_false:
-    print('1. Ебнуть\n2. Выйти')
+    print(Fore.CYAN + '1. Ебнуть\n2. Выйти')
     inp = input('> ')
     if inp == '1':
-        print('Введите юзернейм пользователя')
+        print(Fore.CYAN + 'Введите юзернейм пользователя')
         chat_id = input('> ')
         try:
-            print('ебашим')
+            print(Fore.GREEN + 'ебашим')
             i = 1000
             with app:
                 while i > 1:
@@ -21,6 +24,6 @@ while true_or_false:
                     app.send_message(chat_id, text)
                     sleep(0.1)
         except Exception:
-            print('Пользователь не найден или что то пошло по пизде')
+            print(Fore.RED + 'ERROR\nПользователь не найден или что то пошло по пизде')
     else:
         true_or_false = False
